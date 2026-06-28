@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WorldTree SL</title>
+  <meta name="description" content="WorldTree SL 공식 웹 포털 초기 페이지" />
+  <style>
+    :root {
+      --bg: #07150f;
+      --panel: rgba(13, 35, 24, 0.88);
+      --line: rgba(123, 255, 172, 0.32);
+      --text: #e9fff1;
+      --muted: #9cc9ae;
+      --accent: #7bffac;
+      --gold: #ffd76a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(123, 255, 172, 0.18), transparent 34rem),
+        linear-gradient(180deg, #092016 0%, var(--bg) 64%, #030806 100%);
+    }
+
+    main {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 64px 0;
+    }
+
+    .hero {
+      display: grid;
+      gap: 28px;
+      align-items: center;
+      min-height: 72vh;
+    }
+
+    .badge {
+      display: inline-flex;
+      width: fit-content;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--accent);
+      background: rgba(123, 255, 172, 0.08);
+      font-size: 14px;
+      letter-spacing: 0.04em;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(48px, 9vw, 108px);
+      line-height: 0.92;
+      letter-spacing: -0.07em;
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(18px, 2.5vw, 24px);
+      line-height: 1.55;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .card {
+      min-height: 156px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--panel);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: var(--gold);
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .tree {
+      width: min(360px, 80vw);
+      aspect-ratio: 1;
+      margin: 16px auto 0;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 50% 28%, rgba(123, 255, 172, 0.9) 0 4px, transparent 5px),
+        radial-gradient(circle at 42% 40%, rgba(123, 255, 172, 0.5) 0 16px, transparent 17px),
+        radial-gradient(circle at 58% 40%, rgba(123, 255, 172, 0.42) 0 18px, transparent 19px),
+        radial-gradient(circle at 50% 52%, rgba(123, 255, 172, 0.35) 0 38px, transparent 39px),
+        linear-gradient(90deg, transparent 48%, rgba(255, 215, 106, 0.9) 49% 51%, transparent 52%),
+        linear-gradient(180deg, transparent 59%, rgba(255, 215, 106, 0.28) 60% 84%, transparent 85%);
+      box-shadow: inset 0 0 80px rgba(123, 255, 172, 0.1), 0 0 80px rgba(123, 255, 172, 0.08);
+    }
+
+    footer {
+      margin-top: 48px;
+      color: rgba(233, 255, 241, 0.52);
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      main { padding: 40px 0; }
+      .cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero" aria-labelledby="title">
+      <div>
+        <span class="badge">Official Portal Prototype</span>
+        <h1 id="title">WorldTree<br />SL</h1>
+        <p class="lead">세컨드라이프 기반 RPG WorldTree의 공식 웹 포털 초기 화면입니다. 계정 데이터, 랭킹, 공지, 아이템 리소스를 연결하기 전까지 안전한 정적 랜딩 페이지로 운영합니다.</p>
+      </div>
+      <div class="tree" role="img" aria-label="WorldTree glowing emblem"></div>
+      <div class="cards">
+        <article class="card">
+          <h2>Ranking</h2>
+          <p>서버 API 계약 확정 후 랭킹과 캐릭터 상태를 이 영역에 연결합니다.</p>
+        </article>
+        <article class="card">
+          <h2>Account</h2>
+          <p>인증과 권한 범위가 확정되면 플레이어 계정 데이터를 안전하게 표시합니다.</p>
+        </article>
+        <article class="card">
+          <h2>Resource</h2>
+          <p>공개 가능한 픽셀아트 무기, UI, 공지 리소스를 웹과 게임 양쪽에서 활용합니다.</p>
+        </article>
+      </div>
+    </section>
+    <footer>WorldTree SL · initial static web portal</footer>
+  </main>
+</body>
+</html>
