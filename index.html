@@ -3,44 +3,25 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>WorldTree — Panorama MVP</title>
+<title>WorldTree</title>
 <style>
-:root{--bg:#07100c;--panel:#111f17;--panel2:#1a2f20;--line:#4d6b46;--gold:#ffd76a;--leaf:#75ff90;--text:#fff5d2;--muted:#b9c8a8;--danger:#ff8b68}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% 18%,#284a34,#07100c 62%);color:var(--text);font-family:ui-monospace,Menlo,Consolas,monospace;overflow:hidden}.app{height:100vh;display:grid;grid-template-columns:1fr 350px;grid-template-rows:1fr 126px;gap:10px;padding:10px}.game,.room,.hud{border:3px solid #030603;background:rgba(17,31,23,.95);box-shadow:5px 5px 0 #000}.game{position:relative;overflow:hidden}.sky{position:absolute;inset:0;background:radial-gradient(circle at 50% 34%,#476a8b 0 18%,#1d3146 43%,#080d12 74%)}.stars{position:absolute;inset:0;background-image:radial-gradient(#fff8 1px,transparent 1px);background-size:37px 41px;opacity:.28}.title{position:absolute;z-index:6;left:16px;top:12px;text-shadow:3px 3px #000}.title b{font-size:26px;color:var(--gold)}.season{font-size:12px;color:var(--muted)}.world-wrap{position:absolute;inset:36px 8px 0;display:grid;place-items:center;perspective:900px}.world{position:relative;width:min(92vmin,880px);height:min(60vmin,560px);border-radius:50% 50% 42% 42%;transform:rotateX(52deg);transform-origin:center 64%;background:radial-gradient(ellipse at center,#244b2d 0 9%,#1d3e27 10% 31%,#24381f 32% 52%,#2d2b20 53% 71%,#1d2d31 72% 100%);border:5px solid #050807;box-shadow:inset 0 0 70px #000b,0 28px 60px #000c;overflow:hidden}.world:before{content:"";position:absolute;inset:-20%;background:linear-gradient(90deg,transparent 0 48%,#ffffff12 49% 51%,transparent 52%),linear-gradient(0deg,transparent 0 48%,#ffffff12 49% 51%,transparent 52%);background-size:42px 42px;opacity:.9}.world:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 0 46%,#0006 80%)}.tree{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotateX(-52deg);font-size:74px;z-index:5;filter:drop-shadow(0 0 20px var(--leaf))}.piece{position:absolute;width:24px;height:30px;left:50%;top:50%;transform:translate(-50%,-50%) rotateX(-52deg);z-index:7;background:linear-gradient(#caffd0,#4de56d);border:3px solid #061006;border-radius:50% 50% 35% 35%;box-shadow:0 0 18px #80ff91;transition:.16s linear}.poi{position:absolute;z-index:4;transform:translate(-50%,-50%) rotateX(-52deg);font-size:25px;text-shadow:3px 3px #000;cursor:pointer}.poi:hover{scale:1.18}.fire{filter:drop-shadow(0 0 9px #ffb23b)}.road{position:absolute;height:3px;background:#e8d18d44;transform-origin:left center;z-index:1}.room{display:flex;flex-direction:column;min-width:0}.room h2{margin:12px 12px 6px;color:var(--gold);font-size:18px}.avatars{display:flex;gap:8px;padding:0 10px 8px;overflow:hidden}.avatar{width:76px;min-width:76px;height:92px;background:#0b130e;border:2px solid var(--line);display:grid;place-items:center;text-align:center}.face{font-size:38px}.name{font-size:11px;color:var(--muted)}.log{flex:1;margin:0 10px 10px;padding:10px;background:#08100b;border:2px solid var(--line);overflow:auto;font-size:13px;line-height:1.45}.msg{margin-bottom:8px}.me{color:var(--leaf)}.sera{color:var(--gold)}.input{display:flex;gap:6px;padding:0 10px 10px}.input input{flex:1;background:#08100b;color:var(--text);border:2px solid var(--line);padding:10px;font:inherit}.input button,.btn{background:#2e5735;color:var(--text);border:2px solid #030603;padding:10px 12px;font:inherit;font-weight:900;cursor:pointer;box-shadow:3px 3px #000}.btn:hover,.input button:hover{transform:translate(1px,1px);box-shadow:1px 1px #000}.hud{grid-column:1/3;display:grid;grid-template-columns:116px 1fr auto;gap:12px;align-items:center;padding:10px 14px}.portrait{height:102px;background:#08100b;border:2px solid var(--line);display:grid;grid-template-columns:62px 1fr;align-items:center;padding:6px}.hero{font-size:48px;filter:drop-shadow(0 0 8px #fff8)}.eq{font-size:11px;color:var(--muted)}.stat{display:flex;gap:14px;flex-wrap:wrap}.stat b{color:var(--gold)}@media(max-width:900px){body{overflow:auto}.app{height:auto;min-height:100vh;grid-template-columns:1fr;grid-template-rows:70vh 380px 126px}.hud{grid-column:1;grid-template-columns:1fr}.world-wrap{inset:36px 0 0}.world{width:110vmin;height:72vmin}.portrait{width:100%}}
+body{margin:0;min-height:100vh;background:radial-gradient(circle at top,#284a34,#07100c 65%);color:#fff5d2;font-family:ui-monospace,Menlo,Consolas,monospace}.wrap{max-width:980px;margin:auto;padding:28px}.panel{background:#111f17ee;border:3px solid #030603;box-shadow:6px 6px 0 #000;padding:22px;margin:14px 0}h1{font-size:72px;line-height:.9;margin:18px 0;color:#ffd76a;text-shadow:5px 5px #000}.lead{font-size:18px;line-height:1.6;color:#b9c8a8}.btn{display:inline-block;background:#2e5735;color:#fff5d2;border:2px solid #030603;box-shadow:3px 3px 0 #000;padding:12px 16px;margin:6px 8px 6px 0;text-decoration:none;font-weight:900}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.tree{font-size:92px;filter:drop-shadow(0 0 20px #75ff90)}@media(max-width:760px){.grid{grid-template-columns:1fr}h1{font-size:48px}.wrap{padding:14px}}
 </style>
 </head>
 <body>
-<div class="app">
-  <main class="game">
-    <div class="sky"></div><div class="stars"></div>
-    <div class="title"><b>WORLDTREE</b><br><span class="season" id="worldState">밤 · 봄 · 맑음</span></div>
-    <div class="world-wrap"><div class="world" id="world"><div class="tree">🌳</div><div class="piece" id="piece"></div></div></div>
-  </main>
-  <aside class="room">
-    <h2>세계수 로비</h2>
-    <div class="avatars"><div class="avatar"><div><div class="face">🧝</div><div class="name">학순이</div></div></div><div class="avatar"><div><div class="face">🐰</div><div class="name">세라</div></div></div><div class="avatar"><div><div class="face">🧙</div><div class="name">기획팀</div></div></div><div class="avatar"><div><div class="face">⚒️</div><div class="name">개발팀</div></div></div></div>
-    <div class="log" id="log"></div>
-    <div class="input"><input id="chatInput" placeholder="로비에 말하기" maxlength="120"><button id="send">전송</button></div>
-  </aside>
-  <footer class="hud">
-    <div class="portrait"><div class="hero">🧝</div><div><b>본캐릭터</b><div class="eq">세계에서는 말, 로비에서는 아바타</div></div></div>
-    <div class="stat"><span>행동력 <b id="ap">50</b></span><span>Wood <b id="wood">0</b></span><span>Gold <b id="gold">0</b></span><span>전투력 <b id="power">10</b></span><span>환생P <b id="rp">0</b></span><span>최고거리 <b id="best">0m</b></span></div>
-    <button class="btn" id="rebirth">귀환/환생</button>
-  </footer>
+<div class="wrap">
+  <section class="panel">
+    <div class="tree">🌳</div>
+    <h1>WorldTree</h1>
+    <p class="lead">공식 포털과 바로 실행 가능한 웹게임 MVP입니다. 탐험, 벌목, 성장, 귀환 루프를 먼저 공개하고 이후 서버 데이터와 연결합니다.</p>
+    <a class="btn" href="game.html">게임 시작</a>
+    <a class="btn" href="#guide">플레이 가이드</a>
+  </section>
+  <section id="guide" class="grid">
+    <article class="panel"><h2>탐험</h2><p>맵의 아이콘을 눌러 행동력을 사용합니다.</p></article>
+    <article class="panel"><h2>벌목</h2><p>숲에서 Wood를 얻어 성장 재료로 사용합니다.</p></article>
+    <article class="panel"><h2>귀환</h2><p>환생P를 얻고 다음 원정을 강화합니다.</p></article>
+  </section>
 </div>
-<script>
-const $=id=>document.getElementById(id);
-let s=JSON.parse(localStorage.wtPanorama||'null')||{ap:50,wood:0,gold:0,power:10,rp:0,x:0,y:0,best:0,run:1};
-const pois=[['🌲',-26,-14,'숲'],['🕳️',20,-26,'동굴'],['🔥',35,8,'오크 야영지'],['🔥',-38,18,'고블린 캠프'],['📦',-14,34,'상자'],['❄️',5,-43,'설원'],['⛰️',31,34,'폐허']];
-function pct(v,axis){return axis==='x'?50+v:50+v*.72}
-function save(){localStorage.wtPanorama=JSON.stringify(s)}
-function ui(){['ap','wood','gold','power','rp'].forEach(k=>$(k).textContent=s[k]);$('best').textContent=s.best+'m';$('piece').style.left=pct(s.x,'x')+'%';$('piece').style.top=pct(s.y,'y')+'%';save()}
-function log(w,t){$('log').innerHTML+=`<div class="msg ${w}"><b>${w==='me'?'나':'세라'}:</b> ${t}</div>`;$('log').scrollTop=99999}
-function eventAt(name,d){if(name==='숲'){let w=4+Math.floor(d/9);s.wood+=w;log('sera',`숲 벌목. Wood +${w}`)}else if(name==='동굴'){Math.random()<.42?(s.gold+=25,log('sera','동굴 보물 발견. Gold +25')):log('sera','동굴은 비어 있습니다.')}else if(name.indexOf('야영지')>-1||name.indexOf('캠프')>-1){let need=12+d;if(s.power>=need){s.gold+=30;s.power+=2;log('sera',`${name} 충돌 승리. Gold +30, 전투력 +2`)}else log('sera',`${name} 전투력 부족. 귀환 추천.`)}else if(name==='상자'){Math.random()<.35?(s.rp+=2,log('sera','희귀 상자. 환생P +2')):log('sera','빈 상자입니다.')}else log('sera',`${name} 정찰 완료.`)}
-function moveTo(x,y,name){if(s.ap<=0){log('sera','행동력이 없습니다. 귀환하세요.');return}let cost=Math.max(1,Math.ceil(Math.hypot(x-s.x,y-s.y)/7));if(cost>s.ap){log('sera','행동력이 부족합니다.');return}s.ap-=cost;s.x=x;s.y=y;let d=Math.round(Math.hypot(x,y));s.best=Math.max(s.best,d);eventAt(name,d);ui()}
-function rebirth(){let gain=Math.floor(s.best/8)+Math.floor(s.wood/20)+Math.floor(s.gold/45);s.rp+=gain;s.ap=50+Math.floor(s.rp/2);s.power=10+Math.floor(s.rp/2);s.wood=0;s.gold=0;s.x=0;s.y=0;s.best=0;s.run++;log('sera',`귀환 완료. 환생P +${gain}. 다음 행동력 ${s.ap}`);ui()}
-function makeWorld(){pois.forEach(p=>{let e=document.createElement('div');e.className='poi '+(p[0]==='🔥'?'fire':'');e.textContent=p[0];e.title=p[3];e.style.left=pct(p[1],'x')+'%';e.style.top=pct(p[2],'y')+'%';e.addEventListener('click',()=>moveTo(p[1],p[2],p[3]));$('world').appendChild(e)})}
-$('rebirth').addEventListener('click',rebirth);$('send').addEventListener('click',()=>{let v=$('chatInput').value.trim();if(!v)return;log('me',v);$('chatInput').value='';setTimeout(()=>log('sera','로비 채팅 MVP입니다. 다음 단계는 GitHub/세라브릿지 연결입니다.'),160)});$('chatInput').addEventListener('keydown',e=>{if(e.key==='Enter')$('send').click()});
-makeWorld();log('sera','파노라마 월드 MVP 시작. 밤의 불빛과 타일을 보고 원정하세요.');ui();
-</script>
 </body>
 </html>
