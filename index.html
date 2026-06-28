@@ -1,36 +1,30 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>WorldTree — Official Prototype Portal</title>
-<meta name="description" content="WorldTree 공식 프로토타입 포털. 세계수 중심 파노라마 월드와 원정 성장 루프를 공개합니다." />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WorldTree</title>
 <style>
-:root{--bg:#07100c;--panel:#111f17;--line:#4d6b46;--gold:#ffd76a;--leaf:#75ff90;--text:#fff5d2;--muted:#b9c8a8}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at top,#2a5037,#07100c 62%);color:var(--text);font-family:ui-monospace,Menlo,Consolas,monospace}.wrap{max-width:1120px;margin:auto;padding:26px}.panel{background:rgba(17,31,23,.94);border:3px solid #030603;box-shadow:6px 6px 0 #000;padding:22px;margin:14px 0}.hero{min-height:70vh;display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:center}.mark{font-size:110px;filter:drop-shadow(0 0 24px var(--leaf))}h1{font-size:clamp(48px,9vw,116px);line-height:.86;margin:12px 0;color:var(--gold);text-shadow:6px 6px #000}.lead{font-size:18px;line-height:1.65;color:var(--muted);max-width:720px}.btn{display:inline-block;background:#2e5735;color:var(--text);border:2px solid #030603;box-shadow:3px 3px 0 #000;padding:13px 18px;margin:8px 8px 8px 0;text-decoration:none;font-weight:900}.btn.primary{background:var(--gold);color:#241909}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.world{height:420px;border:4px solid #050807;border-radius:50% 50% 42% 42%;background:radial-gradient(ellipse at center,#2c5a34 0 12%,#1e3f29 13% 35%,#293b22 36% 58%,#2a261e 59% 76%,#1a2a32 77%);box-shadow:inset 0 0 80px #000b,0 30px 70px #000c;position:relative;overflow:hidden}.world:before{content:"";position:absolute;inset:-20%;background:linear-gradient(90deg,transparent 0 48%,#ffffff18 49% 51%,transparent 52%),linear-gradient(0deg,transparent 0 48%,#ffffff18 49% 51%,transparent 52%);background-size:38px 38px}.dot{position:absolute;transform:translate(-50%,-50%);text-shadow:3px 3px #000;font-size:28px}.tree{left:50%;top:50%;font-size:78px;filter:drop-shadow(0 0 20px var(--leaf))}.p1{left:58%;top:61%}.p2{left:70%;top:45%;filter:drop-shadow(0 0 12px #ffab3c)}.p3{left:32%;top:58%;filter:drop-shadow(0 0 12px #ff8b3c)}.p4{left:42%;top:34%}.small{color:var(--muted);font-size:13px;line-height:1.55}footer{color:var(--muted);padding:20px 0}@media(max-width:860px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.wrap{padding:14px}.world{height:310px}}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at top,#2a5037,#07100c 62%);color:#fff5d2;font-family:monospace}.wrap{max-width:980px;margin:auto;padding:28px}.panel{background:#111f17;border:3px solid #030603;box-shadow:6px 6px #000;padding:24px;margin:16px 0}.hero{min-height:70vh;display:grid;place-items:center;text-align:center}.mark{font-size:96px;filter:drop-shadow(0 0 24px #75ff90)}h1{font-size:clamp(52px,12vw,120px);line-height:.9;margin:10px 0;color:#ffd76a;text-shadow:6px 6px #000}.lead{font-size:18px;line-height:1.7;color:#b9c8a8}.btn{display:inline-block;background:#ffd76a;color:#241909;border:2px solid #030603;box-shadow:4px 4px #000;padding:16px 22px;margin:10px;text-decoration:none;font-weight:900}.sub{background:#2e5735;color:#fff5d2}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}@media(max-width:800px){.grid{grid-template-columns:1fr}.wrap{padding:14px}}
 </style>
 </head>
 <body>
 <div class="wrap">
 <section class="panel hero">
-  <div>
-    <div class="mark">🌳</div>
-    <h1>WorldTree</h1>
-    <p class="lead">세계수를 중심으로 펼쳐진 파노라마 월드를 내려다보며, 행동력으로 원정을 떠나고 환생 포인트로 캐릭터와 세계를 성장시키는 멀티플랫폼 게임 프로젝트입니다.</p>
-    <a class="btn primary" href="game.html">게임 시작</a>
-    <a class="btn" href="#status">현재 상태</a>
-  </div>
-  <div class="world" aria-label="WorldTree panorama preview"><div class="dot tree">🌳</div><div class="dot p1">♟</div><div class="dot p2">🔥</div><div class="dot p3">🔥</div><div class="dot p4">🕳️</div></div>
+<div>
+<div class="mark">🌳</div>
+<h1>WorldTree</h1>
+<p class="lead">행동력으로 세계수를 중심으로 한 파노라마 월드를 탐험하고, 환생P로 HUD 캐릭터를 성장시키는 웹 MVP입니다.</p>
+<a class="btn" href="mvp.html">게임 시작</a>
+<a class="btn sub" href="game.html">기존 MVP</a>
+</div>
 </section>
-<section id="status" class="grid">
-  <article class="panel"><h2>탐험</h2><p>행동력 50으로 시작해 숲, 동굴, 야영지, 캠프를 선택하며 원정합니다.</p></article>
-  <article class="panel"><h2>성장</h2><p>원정 성과로 환생 포인트를 얻고 행동력, 전투력, 장비 성장을 준비합니다.</p></article>
-  <article class="panel"><h2>커뮤니티</h2><p>탐험은 작은 말로, 로비와 HUD에서는 본캐릭터 상반신 아바타로 표현합니다.</p></article>
+<section class="grid">
+<div class="panel"><h2>Explore</h2><p>행동력 50으로 숲, 동굴, 불빛, 상자, 광맥, 마을을 클릭해 원정합니다.</p></div>
+<div class="panel"><h2>Grow</h2><p>귀환하면 원정 성과가 환생P가 되고 행동력과 파워를 강화합니다.</p></div>
+<div class="panel"><h2>HUD</h2><p>탐험은 작은 말로, 성장은 HUD 캐릭터 등급과 장비 문구로 체감합니다.</p></div>
 </section>
-<section class="panel">
-  <h2>Prototype Notice</h2>
-  <p class="small">현재 공개판은 완성 게임이 아니라 웹 프로토타입입니다. 정식 도트 스프라이트, 계정 저장, 멀티유저, Second Life 병합은 후속 단계입니다.</p>
-</section>
-<footer>WorldTree Official Prototype · Web / PC / Mobile first · Second Life merge later</footer>
+<section class="panel"><h2>Prototype Notice</h2><p>현재 공개판은 웹 프로토타입입니다. 정식 도트아트, 계정 저장, 멀티유저, Second Life 병합은 후속 단계입니다.</p></section>
 </div>
 </body>
 </html>
